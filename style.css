@@ -1,0 +1,344 @@
+/* =============================================================================
+   VARIABLES GLOBALES Y ESTILO BASE
+   ========================================================================== */
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --muted:#556;
+  --accent-xbox:#107c10;
+  --accent-ps:#003087;
+  --accent-nin:#e60012;
+  --radius:12px;
+  --maxW:1100px;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset + comportamiento base */
+html, body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:#111;
+  line-height:1.45;
+}
+
+/* Contenedor general */
+.container{
+  max-width:var(--maxW);
+  margin:24px auto;
+  padding:16px;
+}
+
+/* =============================================================================
+   ENCABEZADO Y MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+
+/* Bloque del encabezado */
+header.site-header{
+  background:linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+  border-radius:var(--radius);
+  padding:18px;
+  margin-bottom:18px;
+}
+
+/* Identidad de marca (título superior) */
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.brand h1{
+  margin:0;
+  font-size:1.5rem;
+  letter-spacing:0.4px;
+}
+
+/* Estilo general del nav */
+nav.main-nav{
+  margin-top:12px;
+}
+
+/* Links del menú */
+nav.main-nav a{
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  color:var(--muted);
+  font-weight:600;
+  margin-right:8px;
+  background:transparent;
+}
+
+nav.main-nav a:hover{
+  background:#eef2f7;
+  color:#000;
+}
+
+/* Estructura correcta para listas en el menú */
+nav.main-nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:10px;
+}
+
+nav.main-nav li{
+  display:inline-block;
+}
+
+/* =============================================================================
+   BLOQUES GENERALES
+   ========================================================================== */
+
+/* Estructura principal */
+main{
+  display:grid;
+  gap:18px;
+}
+
+/* =============================================================================
+   HERO (Banner principal)
+   ========================================================================== */
+.hero{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:18px;
+  background:var(--card);
+  border-radius:var(--radius);
+}
+
+.hero .intro{
+  flex:1;
+}
+
+.hero h2{
+  margin:0 0 8px 0;
+  font-size:1.25rem;
+}
+
+.hero p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* =============================================================================
+   SECCIÓN DE PLATAFORMAS (Xbox, PlayStation, Nintendo)
+   ========================================================================== */
+
+/* Grid general para 3 columnas */
+.platforms{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:16px;
+}
+
+/* Tarjeta individual por plataforma */
+.platform{
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 1px 6px rgba(16,24,40,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* Encabezado dentro de cada tarjeta */
+.platform header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.platform h3{
+  margin:0;
+  font-size:1.1rem;
+}
+
+/* Estilos para las insignias */
+.badge{
+  padding:15px 50px;
+  align-self:center;
+  border-radius:999px;
+  color:#fff;
+  font-weight:700;
+  font-size:0.85rem;
+}
+
+.xbox{ background:var(--accent-xbox); }
+.ps{ background:var(--accent-ps); }
+.nin{ background:var(--accent-nin); }
+
+/* Imagen y figura */
+figure{
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+figure img{
+  max-width:100%;
+  height:auto;
+  border-radius:8px;
+  display:block;
+}
+
+figcaption{
+  font-size:0.85rem;
+  color:var(--muted);
+  text-align:center;
+  margin-top:6px;
+}
+
+/* Listas dentro de "Características" */
+.features ul{
+  margin:0;
+  padding-left:18px;
+}
+
+/* Bloque lateral opcional */
+aside.side-info{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  color:var(--muted);
+}
+
+/* =============================================================================
+   SECCIÓN: TOP 3 / TOP 10 MULTIPLATAFORMA
+   ========================================================================== */
+
+/* Colores para títulos */
+.title-xbox{ color:var(--accent-xbox); }
+.title-ps{ color:var(--accent-ps); }
+.title-nintendo{ color:var(--accent-nin); }
+
+/* Bordes de colores (similar al Top 10 original) */
+.xbox-border{ border-left:5px solid var(--accent-xbox); }
+.ps-border{ border-left:5px solid var(--accent-ps); }
+.nin-border{ border-left:5px solid var(--accent-nin); }
+
+/* Contenedor principal de la sección */
+.top3{
+  background:var(--card);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:0 1px 6px rgba(0,0,0,0.05);
+  margin-top:20px;
+}
+
+.top3 h2{
+  margin-top:0;
+  text-align:center;
+  font-size:1.4rem;
+  color:#222;
+}
+
+/* Grid de tarjetas */
+.top3-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+/* Tarjeta de videojuego */
+.game-card{
+  background:#f0f2f5;
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+  transition:transform 0.15s;
+}
+
+.game-card:hover{
+  transform:scale(1.03);
+}
+
+.game-card img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+}
+
+.game-card h4{
+  margin:10px 0 6px 0;
+  font-size:1.05rem;
+}
+
+.game-card p{
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* =============================================================================
+   FORMULARIO (Encuesta / Contacto)
+   ========================================================================== */
+
+form{
+  display:grid;
+  gap:12px;
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  margin-top:16px;
+}
+
+label{
+  font-weight:600;
+  color:var(--muted);
+}
+
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;
+}
+
+button{
+  padding:10px;
+  font-size:1rem;
+  border:none;
+  border-radius:8px;
+  background:#003087;
+  color:white;
+  cursor:pointer;
+  font-weight:700;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+/* =============================================================================
+   PIE DE PÁGINA
+   ========================================================================== */
+
+footer.site-footer{
+  margin-top:18px;
+  padding:12px;
+  text-align:center;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width:540px){
+  .brand h1{ 
+    font-size:1.15rem; 
+  }
+  .hero{ 
+    flex-direction:column; 
+    align-items:flex-start; 
+  }
+}
